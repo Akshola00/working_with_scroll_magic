@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/ScrollMagic.js"></script>
+    <script src="./js/debug.addIndicators.js"></script>
+    <style>
+        section{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid blue;
+        }
+        section > div {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+        section > div > img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .project {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in;
+        }
+        .project.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div><img src="./img/daniel-fazio-DzqeB43HfnE-unsplash.jpg" alt=""></div>
+        <h2>Heading</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, eum sed voluptatibus ratione facere a dicta atque harum hic recusandae!</p>
+    </section>
+    <section>
+        <div><img src="./img/group-afro-americans-working-together.jpg" alt=""></div>
+        <h2>Heading</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, eum sed voluptatibus ratione facere a dicta atque harum hic recusandae!</p>
+    </section>
+    <section class="project" id="project01">
+        <div><img src="./img/tolga-ulkan-f4rYLkBy0gU-unsplash.jpg" alt=""></div>
+        <h2>Heading</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, eum sed voluptatibus ratione facere a dicta atque harum hic recusandae!</p>
+    </section>
+    <section>
+        <div><img src="" alt=""></div>
+        <h2>Heading</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, eum sed voluptatibus ratione facere a dicta atque harum hic recusandae!</p>
+    </section>
+    <script>
+        // init
+        var controller = new ScrollMagic.Controller();
+
+        // build a scene 
+        var ourScene = new ScrollMagic.Scene({triggerElement: '#project01'})
+        .setClassToggle('#project01', 'fade-in') // add class to project
+        .addIndicators()
+        .addToController
+    </script>
+    <script src="./js/tracking.js"></script>
+</body>
+</html>
